@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="'Segoe UI', system-ui, sans-serif">
+  <!-- Background -->
+  <rect width="900" height="560" fill="#0f0f1a" rx="16"/>
+
+  <!-- Title -->
+  <text x="450" y="48" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="700" letter-spacing="-0.5">assertdrift</text>
+  <text x="450" y="72" text-anchor="middle" fill="#9b8ec4" font-size="14">Detect Tests That Pass But Prove Nothing</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="88" x2="840" y2="88" stroke="#2a2a3e" stroke-width="1"/>
+
+  <!-- ── SCORING RUBRIC CARDS ── -->
+  <!-- ZERO card -->
+  <rect x="40" y="110" width="185" height="120" rx="12" fill="#1a1a2e" stroke="#c92a2a" stroke-width="1.5"/>
+  <rect x="40" y="110" width="185" height="36" rx="12" fill="#c92a2a"/>
+  <rect x="40" y="134" width="185" height="12" fill="#c92a2a"/>
+  <text x="132" y="133" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">🔴 ZERO — Score 0</text>
+  <text x="132" y="162" text-anchor="middle" fill="#ff8787" font-size="12" font-weight="600">Tautologies</text>
+  <text x="132" y="182" text-anchor="middle" fill="#868e96" font-size="11">assert True</text>
+  <text x="132" y="198" text-anchor="middle" fill="#868e96" font-size="11">assertTrue(True)</text>
+  <text x="132" y="218" text-anchor="middle" fill="#ff8787" font-size="11" font-weight="600">Always flagged ⚑</text>
+
+  <!-- LOW card -->
+  <rect x="245" y="110" width="185" height="120" rx="12" fill="#1a1a2e" stroke="#e67700" stroke-width="1.5"/>
+  <rect x="245" y="110" width="185" height="36" rx="12" fill="#e67700"/>
+  <rect x="245" y="134" width="185" height="12" fill="#e67700"/>
+  <text x="337" y="133" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">🟠 LOW — Score 1</text>
+  <text x="337" y="162" text-anchor="middle" fill="#ffa94d" font-size="12" font-weight="600">Existence checks</text>
+  <text x="337" y="182" text-anchor="middle" fill="#868e96" font-size="11">assertIsNotNone(x)</text>
+  <text x="337" y="198" text-anchor="middle" fill="#868e96" font-size="11">assertTrue(x)</text>
+  <text x="337" y="218" text-anchor="middle" fill="#ffa94d" font-size="11" font-weight="600">Flagged if avg &lt; 1.5 ⚑</text>
+
+  <!-- MEDIUM card -->
+  <rect x="450" y="110" width="185" height="120" rx="12" fill="#1a1a2e" stroke="#f59f00" stroke-width="1.5"/>
+  <rect x="450" y="110" width="185" height="36" rx="12" fill="#f59f00"/>
+  <rect x="450" y="134" width="185" height="12" fill="#f59f00"/>
+  <text x="542" y="133" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">🟡 MEDIUM — Score 2</text>
+  <text x="542" y="162" text-anchor="middle" fill="#ffe066" font-size="12" font-weight="600">Type / member checks</text>
+  <text x="542" y="182" text-anchor="middle" fill="#868e96" font-size="11">assertIsInstance(obj, str)</text>
+  <text x="542" y="198" text-anchor="middle" fill="#868e96" font-size="11">assertIn(x, collection)</text>
+  <text x="542" y="218" text-anchor="middle" fill="#ffe066" font-size="11" font-weight="600">Not flagged ✓</text>
+
+  <!-- HIGH card -->
+  <rect x="655" y="110" width="185" height="120" rx="12" fill="#1a1a2e" stroke="#2f9e44" stroke-width="1.5"/>
+  <rect x="655" y="110" width="185" height="36" rx="12" fill="#2f9e44"/>
+  <rect x="655" y="134" width="185" height="12" fill="#2f9e44"/>
+  <text x="747" y="133" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">🟢 HIGH — Score 3</text>
+  <text x="747" y="162" text-anchor="middle" fill="#8ce99a" font-size="12" font-weight="600">Exact value checks</text>
+  <text x="747" y="182" text-anchor="middle" fill="#868e96" font-size="11">assertEqual(x, 42)</text>
+  <text x="747" y="198" text-anchor="middle" fill="#868e96" font-size="11">assert x == "exact"</text>
+  <text x="747" y="218" text-anchor="middle" fill="#8ce99a" font-size="11" font-weight="600">Strong assertion ✓</text>
+
+  <!-- ── PIPELINE FLOW ── -->
+  <text x="450" y="268" text-anchor="middle" fill="#9b8ec4" font-size="13" font-weight="600" letter-spacing="2">HOW IT WORKS</text>
+  <line x1="60" y1="278" x2="840" y2="278" stroke="#2a2a3e" stroke-width="1"/>
+
+  <!-- Step 1 -->
+  <rect x="40" y="295" width="148" height="80" rx="10" fill="#1a1a2e" stroke="#6741d9" stroke-width="1.5"/>
+  <text x="114" y="320" text-anchor="middle" fill="#b197fc" font-size="22">📂</text>
+  <text x="114" y="342" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">test_*.py files</text>
+  <text x="114" y="360" text-anchor="middle" fill="#868e96" font-size="11">Input directory</text>
+
+  <!-- Arrow -->
+  <path d="M190 335 L215 335" stroke="#6741d9" stroke-width="2" marker-end="url(#arrow-purple)"/>
+
+  <!-- Step 2 -->
+  <rect x="217" y="295" width="148" height="80" rx="10" fill="#1a1a2e" stroke="#2f9e44" stroke-width="1.5"/>
+  <text x="291" y="320" text-anchor="middle" fill="#8ce99a" font-size="22">🔍</text>
+  <text x="291" y="342" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">AST Walker</text>
+  <text x="291" y="360" text-anchor="middle" fill="#868e96" font-size="11">analyzer.py</text>
+
+  <!-- Arrow -->
+  <path d="M367 335 L392 335" stroke="#2f9e44" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+  <!-- Step 3 -->
+  <rect x="394" y="295" width="148" height="80" rx="10" fill="#1a1a2e" stroke="#1971c2" stroke-width="1.5"/>
+  <text x="468" y="320" text-anchor="middle" fill="#74c0fc" font-size="22">📏</text>
+  <text x="468" y="342" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">Score Rubric</text>
+  <text x="468" y="360" text-anchor="middle" fill="#868e96" font-size="11">ZERO → HIGH</text>
+
+  <!-- Arrow -->
+  <path d="M544 335 L569 335" stroke="#1971c2" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- Step 4 -->
+  <rect x="571" y="295" width="148" height="80" rx="10" fill="#1a1a2e" stroke="#e67700" stroke-width="1.5"/>
+  <text x="645" y="320" text-anchor="middle" fill="#ffa94d" font-size="22">📊</text>
+  <text x="645" y="342" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">Rich Table</text>
+  <text x="645" y="360" text-anchor="middle" fill="#868e96" font-size="11">reporter.py</text>
+
+  <!-- Arrow -->
+  <path d="M721 335 L746 335" stroke="#e67700" stroke-width="2" marker-end="url(#arrow-orange)"/>
+
+  <!-- Step 5 -->
+  <rect x="748" y="295" width="148" height="80" rx="10" fill="#1a1a2e" stroke="#c92a2a" stroke-width="1.5"/>
+  <text x="822" y="320" text-anchor="middle" fill="#ff8787" font-size="22">🤖</text>
+  <text x="822" y="342" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">AI Suggestions</text>
+  <text x="822" y="360" text-anchor="middle" fill="#868e96" font-size="11">--suggest flag</text>
+
+  <!-- ── STATS BAR ── -->
+  <rect x="40" y="400" width="820" height="80" rx="12" fill="#1a1a2e" stroke="#2a2a3e" stroke-width="1.5"/>
+  <text x="450" y="425" text-anchor="middle" fill="#9b8ec4" font-size="11" font-weight="600" letter-spacing="2">CLI USAGE</text>
+
+  <rect x="60" y="435" width="380" height="32" rx="6" fill="#0f0f1a"/>
+  <text x="250" y="456" text-anchor="middle" fill="#8ce99a" font-size="12" font-family="'Courier New', monospace">python main.py tests/</text>
+
+  <rect x="460" y="435" width="380" height="32" rx="6" fill="#0f0f1a"/>
+  <text x="650" y="456" text-anchor="middle" fill="#74c0fc" font-size="12" font-family="'Courier New', monospace">python main.py tests/ --suggest</text>
+
+  <!-- ── NEO FOOTER ── -->
+  <rect x="40" y="500" width="820" height="44" rx="10" fill="#6741d9"/>
+  <text x="450" y="519" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">🤖 Built Autonomously by NEO — Your Autonomous AI Agent</text>
+  <text x="450" y="537" text-anchor="middle" fill="#d0bfff" font-size="11">heyneo.so · VS Code Extension: marketplace.visualstudio.com/items?itemName=NeoResearchInc.heyneo</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6741d9"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2f9e44"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1971c2"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#e67700"/>
+    </marker>
+  </defs>
+</svg>
